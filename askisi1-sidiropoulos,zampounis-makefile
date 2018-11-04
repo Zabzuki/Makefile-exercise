@@ -1,0 +1,18 @@
+#Ζαμπούνης Χρήστος ΑΜ:Π2015079
+#Σιδηρόπουλος Γεώργιος ΑΜ:Π2015057
+
+#To paron makefile xrhsimopoiei header files kathos kai object pou exoun dhmiourghthei me skopo na brei ton meso oro alla kai ton megisto apo tous arithmous pou exoun dwthei 
+
+#ulopoiei to main_program kanontas xrhsh twn main_program,avg,max objects pou exoun dhmiourgithei
+main_program: main_program.o avg.o max.o
+	gcc -o main_program main_program.o avg.o max.o
+#kanoume compile and run to main_program.o object kanontas xrhsh twn header files avg kai max kathws kai to main_program
+main_program.o: main_program.c avg.h max.h
+	gcc -c -o main_program.o  main_program.c
+#kanoume compile and run to avg.o object kanontas xrhsh tou header file avg.h
+avg.o: avg.c avg.h
+	gcc -c -o avg.o  avg.c
+#kanoume compile and run to max.o object kanontas xrhsh tou header file max.h
+max.o: max.c max.h
+	gcc -c -o max.o  max.c
+
